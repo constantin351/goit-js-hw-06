@@ -21,6 +21,7 @@ const createBoxes = (value) => {
   // получаем значение value(счетчика) в input-е
   let amount = Number(input.getAttribute("value"));
   let firstDivSize = 20;
+  const array = [];
 
    for (let i = 0; i < amount; i += 1) { 
     firstDivSize += 10;
@@ -30,17 +31,16 @@ const createBoxes = (value) => {
     newDiv.style.height = firstDivSize + 'px';
 
     newDiv.style.backgroundColor = getRandomHexColor();
-    outcomeDiv.append(newDiv);
+    array.push(newDiv);
 
     // добавляем классы новым div-ам
     newDiv.classList.toggle("new_box");
-  }
-  
+    
+   }
+  outcomeDiv.append(...array);
 };
 
 createBtn.addEventListener("click", createBoxes);
-
-// console.log(outcomeDiv.childNodes)
 
 
 function destroyBoxes() { 

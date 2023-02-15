@@ -7,11 +7,11 @@ form.addEventListener("submit", (event) => {
         elements: { email, password }
     } = event.currentTarget;
 
-    if (email.value === "" || password.value === "") { 
+    if (email.value === "" || password.value === "") {
         alert("Fill into all the fields");
+    } else { 
+        console.log({ email: email.value, password: password.value });
     }
-
-    console.log({ email: email.value, password: password.value })
 
     event.currentTarget.reset();
 });

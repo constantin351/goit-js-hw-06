@@ -20,12 +20,13 @@ const markup = images
   .join("");
 
 list.insertAdjacentHTML("afterbegin", markup);
-list.style.listStyle = 'none';
-list.style.paddingLeft = "0px";
-list.style.display = "flex";
-list.style.alignItems = "center";
-list.style.justifyContent = "center";
-list.style.gap = "20px";
+
+const allLi = document.querySelectorAll('li');
+  
+allLi.forEach(item => {
+  item.classList.add("gallery-item");
+});
+
 console.log(list);
 
 
